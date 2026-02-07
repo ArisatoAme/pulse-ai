@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { ResponsiveContainer, LineChart, Line, YAxis } from 'recharts';
 import PaymentModal from './components/PaymentModal';
+import deviceImg from './assets/device.jpg';
 
 // --- Sub-components (Moved into App.tsx for simplicity as requested, but cleaner) ---
 
@@ -225,7 +226,7 @@ export default function App() {
                         <div className="relative">
                             <div className="relative z-10 animate-float">
                                 <img
-                                    src="https://images.unsplash.com/photo-1584982751601-97dcc096654c?auto=format&fit=crop&q=80&w=800&h=800"
+                                    src={deviceImg}
                                     alt="Pulse AI Device"
                                     className="rounded-[40px] shadow-2xl border border-white/10 grayscale-[0.2] object-cover aspect-square"
                                 />
