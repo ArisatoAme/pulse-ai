@@ -9,7 +9,6 @@ import {
     useElements,
 } from '@stripe/react-stripe-js';
 
-// Replace with your own publishable key or a test key
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 interface PaymentModalProps {
@@ -25,19 +24,14 @@ const CheckoutForm = ({ onSuccess }: { onSuccess: () => void }) => {
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-
-        if (!stripe || !elements) {
-            return;
-        }
+        if (!stripe || !elements) return;
 
         setProcessing(true);
         setError(null);
 
         const cardElement = elements.getElement(CardElement);
-
         if (!cardElement) return;
 
-        // Use Stripe to create a token or payment method
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
             card: cardElement,
@@ -48,7 +42,6 @@ const CheckoutForm = ({ onSuccess }: { onSuccess: () => void }) => {
             setProcessing(false);
         } else {
             console.log('PaymentMethod:', paymentMethod);
-            // Simulate backend confirm
             setTimeout(() => {
                 setProcessing(false);
                 onSuccess();
@@ -65,23 +58,18 @@ const CheckoutForm = ({ onSuccess }: { onSuccess: () => void }) => {
                             base: {
                                 fontSize: '16px',
                                 color: '#ffffff',
-                                '::placeholder': {
-                                    color: '#94a3b8',
-                                },
+                                '::placeholder': { color: '#94a3b8' },
                             },
-                            invalid: {
-                                color: '#ef4444',
-                            },
+                            invalid: { color: '#ef4444' },
                         },
                     }}
                 />
             </div>
             {error && <div className="text-red-400 text-sm">{error}</div>}
-
             <button
                 type="submit"
                 disabled={!stripe || processing}
-                className="w-full bg-teal-500 hover:bg-teal-400 text-white font-bold py-4 rounded-xl transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-teal-500 hover:bg-teal-400 text-white font-bold py-4 rounded-xl transition-all active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-2"
             >
                 {processing ? (
                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -160,6 +148,6 @@ export default function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
                     )}
                 </AnimatePresence>
             </motion.div>
-        </div >
+        </div>
     );
 }
