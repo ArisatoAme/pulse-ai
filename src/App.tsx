@@ -9,8 +9,10 @@ import {
 } from 'lucide-react';
 import PaymentModal from './components/PaymentModal';
 import deviceImg from './assets/device.jpg';
+import heroDeviceImg from './assets/hero-device.png';
 import doctorsImg from './assets/doctors.png';
 import studentsImg from './assets/students.png';
+import logoImg from './assets/logo.png';
 
 // Navbar
 const Navbar = ({ onBuyClick }: { onBuyClick: () => void }) => {
@@ -20,11 +22,8 @@ const Navbar = ({ onBuyClick }: { onBuyClick: () => void }) => {
         <nav className="fixed top-0 left-0 right-0 z-50 bg-[#e5e7eb]/80 backdrop-blur-md border-b border-gray-200 py-4">
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    {/* Logo Placeholder - Pulse AI in Xoro style */}
-                    <div className="flex flex-col leading-none">
-                        <span className="text-2xl font-bold text-primary-dark font-display tracking-tight">Pulse AI</span>
-                        <span className="text-[0.6rem] font-bold text-gray-500 tracking-widest uppercase">BY VIGYAVED</span>
-                    </div>
+                    {/* Logo */}
+                    <img src={logoImg} alt="Xoro by Vigyaved" className="h-10 object-contain" />
                 </div>
 
                 <div className="hidden md:flex items-center gap-8">
@@ -119,26 +118,12 @@ export default function App() {
                         <div className="lg:w-1/2 relative lg:h-[600px] flex items-center justify-center">
                             {/* Device image with background blur effects */}
                             <div className="absolute inset-0 bg-primary/5 rounded-full blur-[100px] transform translate-x-10"></div>
-                            <div className="relative z-10 w-full max-w-md">
+                            <div className="relative z-10 w-full max-w-lg">
                                 <img
-                                    src={deviceImg}
-                                    alt="Pulse AI Device"
-                                    className="w-full object-contain drop-shadow-2xl rounded-3xl"
+                                    src={heroDeviceImg}
+                                    alt="Pulse AI Device and App"
+                                    className="w-full object-contain drop-shadow-2xl"
                                 />
-                                {/* Floating Mobile Mockup (Visual only) */}
-                                <div className="absolute -bottom-10 -right-4 w-40 bg-white rounded-3xl shadow-2xl p-2 border-4 border-gray-800 md:block hidden rotate-12">
-                                    <div className="bg-gray-100 rounded-2xl h-64 overflow-hidden relative">
-                                        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-3 bg-black rounded-b-lg"></div>
-                                        <div className="p-4 pt-8">
-                                            <div className="h-10 bg-primary/10 rounded-lg mb-2 w-3/4"></div>
-                                            <div className="h-20 bg-primary/5 rounded-lg mb-2"></div>
-                                            <div className="flex gap-2 justify-center mt-8">
-                                                <div className="w-8 h-8 rounded-full bg-red-400"></div>
-                                                <div className="w-8 h-8 rounded-full bg-primary"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             {/* Vertical Watermark */}
                             <div className="absolute right-0 top-1/2 -translate-y-1/2 text-9xl font-bold text-gray-200 -z-10 rotate-90 hidden xl:block select-none">
