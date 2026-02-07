@@ -4,12 +4,12 @@
 
 @layer base {
   body {
-    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    @apply bg-[#e5e7eb] text-slate-800 font-sans antialiased;
   }
 }
 
-@layer utilities {holy 
-  .glass-card {
+@layer utilities {
+  holy .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-white/10;
   }
 }

@@ -11,10 +11,17 @@ export default {
                 display: ['Outfit', 'sans-serif'],
             },
             colors: {
+                primary: {
+                    DEFAULT: '#3b5597', // Navy Blue from screenshot
+                    dark: '#2e4378',
+                },
+                accent: {
+                    DEFAULT: '#22c55e', // Greenish Teal from screenshot
+                    dark: '#16a34a',
+                },
                 teal: {
                     400: '#2dd4bf',
                     500: '#14b8a6',
-                    // Add other necessary shades from the reference
                 }
             },
             animation: {
