@@ -8,7 +8,7 @@
   }
 }
 
-@layer utilities {
+@layer utilities {holy 
   .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-white/10;
   }
