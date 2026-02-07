@@ -15,6 +15,13 @@ import studentsImg from './assets/students.png';
 import logoImg from './assets/logo.png';
 import comparisonImg from './assets/comparison.png';
 
+// Gallery imports
+import gallery1 from './assets/gallery1.jpg.png';
+import gallery2 from './assets/gallery2.jpg.png';
+import gallery3 from './assets/gallery3.jpg.png';
+import gallery4 from './assets/gallery4.jpg.png';
+import gallery5 from './assets/gallery5.jpg.png';
+
 // Navbar
 const Navbar = ({ onBuyClick }: { onBuyClick: () => void }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -371,6 +378,32 @@ export default function App() {
                     </div>
                 </div>
             </section>
-        </div>
+
+
+            {/* Gallery Section */}
+            <section className="py-20 bg-[#e5e7eb]">
+                <div className="container mx-auto px-6">
+                    <h2 className="text-4xl font-bold font-display text-center mb-12 text-teal-800">XORO Gallery</h2>
+
+                    <div className="bg-teal-600 p-8 rounded-[3rem] shadow-2xl">
+                        <div className="grid md:grid-cols-5 gap-6 mb-6">
+                            <div className="md:col-span-3 h-64 md:h-80 relative overflow-hidden rounded-3xl group">
+                                <img src={gallery1} alt="Gallery 1" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            </div>
+                            <div className="md:col-span-2 h-64 md:h-80 relative overflow-hidden rounded-3xl group">
+                                <img src={gallery2} alt="Gallery 2" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            </div>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            {[gallery3, gallery4, gallery5].map((img, i) => (
+                                <div key={i} className="h-64 relative overflow-hidden rounded-3xl group">
+                                    <img src={img} alt={`Gallery ${i + 3}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div >
     );
 }
