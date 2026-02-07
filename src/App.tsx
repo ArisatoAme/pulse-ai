@@ -13,6 +13,7 @@ import heroDeviceImg from './assets/hero-device.png';
 import doctorsImg from './assets/doctors.png';
 import studentsImg from './assets/students.png';
 import logoImg from './assets/logo.png';
+import comparisonImg from './assets/comparison.png';
 
 // Navbar
 const Navbar = ({ onBuyClick }: { onBuyClick: () => void }) => {
@@ -23,7 +24,7 @@ const Navbar = ({ onBuyClick }: { onBuyClick: () => void }) => {
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                     {/* Logo */}
-                    <img src={logoImg} alt="Xoro by Vigyaved" className="h-10 object-contain" />
+                    <img src={logoImg} alt="Xoro by Vigyaved" className="h-10 object-contain mix-blend-multiply" />
                 </div>
 
                 <div className="hidden md:flex items-center gap-8">
@@ -117,17 +118,22 @@ export default function App() {
 
                         <div className="lg:w-1/2 relative lg:h-[600px] flex items-center justify-center">
                             {/* Device image with background blur effects */}
-                            <div className="absolute inset-0 bg-primary/5 rounded-full blur-[100px] transform translate-x-10"></div>
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-teal-500/20 rounded-full blur-[120px] -z-10"></div>
+
                             <div className="relative z-10 w-full max-w-lg">
                                 <img
                                     src={heroDeviceImg}
-                                    alt="Pulse AI Device and App"
-                                    className="w-full object-contain drop-shadow-2xl"
+                                    alt="Xoro Device and App"
+                                    className="w-full object-contain mix-blend-multiply drop-shadow-[0_20px_50px_rgba(20,184,166,0.3)]"
+                                    style={{
+                                        maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
+                                        WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)'
+                                    }}
                                 />
                             </div>
                             {/* Vertical Watermark */}
                             <div className="absolute right-0 top-1/2 -translate-y-1/2 text-9xl font-bold text-gray-200 -z-10 rotate-90 hidden xl:block select-none">
-                                Pulse
+                                Xoro
                             </div>
                         </div>
                     </div>
@@ -152,7 +158,7 @@ export default function App() {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-teal-700 font-display inline-flex items-center gap-4">
-                            THE SOLUTION IS PULSE AI
+                            THE SOLUTION IS XORO
                             <div className="h-12 w-24 bg-gray-800 rounded-full flex items-center justify-center overflow-hidden border-2 border-gray-600">
                                 <img src={deviceImg} className="w-full h-full object-cover opacity-50" />
                             </div>
@@ -267,15 +273,15 @@ export default function App() {
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
                             {
-                                text: "In a busy OPD, background noise is always a problem. With Pulse AI, I can hear heart and lung sounds more clearly without constantly asking for silence. The amplification and noise filtering actually help in real conditions.",
+                                text: "In a busy OPD, background noise is always a problem. With Xoro, I can hear heart and lung sounds more clearly without constantly asking for silence. The amplification and noise filtering actually help in real conditions.",
                                 author: "Dr. Ankit Sharma, General Physician"
                             },
                             {
-                                text: "Recording auscultation findings has helped me compare patient progress over time and discuss cases with colleagues. Pulse AI makes this simple without adding extra steps.",
+                                text: "Recording auscultation findings has helped me compare patient progress over time and discuss cases with colleagues. Xoro makes this simple without adding extra steps.",
                                 author: "Dr. R. Mehta, Internal Medicine"
                             },
                             {
-                                text: "I used to struggle identifying murmurs during practicals. Recording and replaying sounds on Pulse AI helped me understand what I was actually hearing. It made practice much more effective.",
+                                text: "I used to struggle identifying murmurs during practicals. Recording and replaying sounds on Xoro helped me understand what I was actually hearing. It made practice much more effective.",
                                 author: "Final-Year MBBS Student"
                             }
                         ].map((testi, i) => (
@@ -292,22 +298,22 @@ export default function App() {
             {/* Comparison Table */}
             <section className="py-20 bg-[#e5e7eb]">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-4xl font-bold text-teal-700 font-display text-center mb-12">Pulse AI vs Traditional Stethoscope</h2>
+                    <h2 className="text-4xl font-bold text-teal-700 font-display text-center mb-12">Xoro vs Traditional Stethoscope</h2>
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="bg-white rounded-lg border border-gray-300 overflow-hidden text-sm">
                             <div className="grid grid-cols-3 bg-teal-700 text-white font-bold p-4 text-center">
                                 <div className="text-left pl-4">FEATURE</div>
                                 <div>Traditional Stethoscope</div>
-                                <div className="uppercase">Pulse AI Stethoscope</div>
+                                <div className="uppercase">Xoro Stethoscope</div>
                             </div>
                             <div className="divide-y divide-gray-200">
                                 {[
-                                    { name: "Sound Amplification", trad: false, pulse: true },
-                                    { name: "Noise Cancellation", trad: false, pulse: true },
-                                    { name: "Recording & Playback", trad: false, pulse: true },
-                                    { name: "AI Assistance", trad: false, pulse: true },
-                                    { name: "Telemedicine Friendly", trad: false, pulse: true },
-                                    { name: "Visual Waveform", trad: false, pulse: true },
+                                    { name: "Sound Amplification", trad: false, xoro: true },
+                                    { name: "Noise Cancellation", trad: false, xoro: true },
+                                    { name: "Recording & Playback", trad: false, xoro: true },
+                                    { name: "AI Assistance", trad: false, xoro: true },
+                                    { name: "Telemedicine Friendly", trad: false, xoro: true },
+                                    { name: "Visual Waveform", trad: false, xoro: true },
                                 ].map((row, i) => (
                                     <div key={i} className="grid grid-cols-3 p-4 text-center items-center hover:bg-gray-50">
                                         <div className="text-left pl-4 font-semibold text-gray-700">{row.name}</div>
@@ -323,7 +329,7 @@ export default function App() {
                             </div>
                         </div>
                         <div>
-                            <img src={deviceImg} className="rounded-2xl shadow-2xl w-full" alt="Comparison" />
+                            <img src={comparisonImg} className="rounded-2xl shadow-2xl w-full" alt="Comparison" />
                         </div>
                     </div>
                 </div>
